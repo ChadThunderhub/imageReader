@@ -26,12 +26,16 @@ public:
 	void printMostFrequentColor() override;
 	int calcualteNumberOfUniqueColors() override;
 
+	pair<int, int> getMostFrequentColor();
+
+	void printImageData();
 	void transponeImage();
 	void rotateImage();
 	void printLeastFrequentColor();
 
-	pair<int, int> getMostFrequentColor();
-	void printImageData();
+
+
+
 
 };
 

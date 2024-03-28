@@ -40,7 +40,6 @@ int main()
 
 	PPM.printImageInfo();
 	PPM.printMostFrequentColor();
-	PPM.calcualteNumberOfUniqueColors();
 	PPM.printLeastFrequentColor();
 	cout << endl;
 	 

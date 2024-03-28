@@ -23,15 +23,16 @@ public:
     PPMReader(std::string imagePath);
 
     void printImageInfo() override;
+
+    pair<int, int> getMostFrequentColors();
     void printMostFrequentColor() override;
-    int calcualteNumberOfUniqueColors();
+
+    int calcualteNumberOfUniqueColors() override;
 
     pair<int, int> getLeastFrequentColor();
     void printLeastFrequentColor();
 
-    pair<int, int> getMostFrequentColors();
     void printImageData();
-
 };
 
 #endif // _PPMREADER_HPP_

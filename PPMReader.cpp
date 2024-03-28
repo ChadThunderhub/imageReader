@@ -36,9 +36,6 @@ PPMReader::PPMReader(string imagePath)
                     }
                 }
 
-                // Odczytanie maksymalnej wartoœci koloru DO PRZEJRZENIA
-               // imageFile >> maxColor;
-
                 imageData.resize(height, std::vector<int>(width * 3));
                 for (int y = 0; y < height; ++y)
                 {
@@ -72,8 +69,6 @@ void PPMReader::printImageInfo()
 {
     cout << "Rozmiar obrazu: " << width << "x" << height << endl;
     cout << "Iloœæ unikalnych kolorów: " << calcualteNumberOfUniqueColors() << endl;
-    //cout << "Maksymalna wartosc koloru: " << maxColor << "\n"; //DO PRZEJRZENIA
-    //printMostFrequentColor();
 
     set<int> uniqueColors;
     for (int y = 0; y < height; ++y)
@@ -123,7 +118,6 @@ pair<int, int> PPMReader::getMostFrequentColors()
         }
     }
 
-    // Szukamy najczêœciej wystêpuj¹cego koloru
     int maxFrequency = 0;
     int mostFrequentColor = 0;
     for (const auto& pair : colorFrequency)
@@ -163,7 +157,8 @@ pair<int, int> PPMReader::getLeastFrequentColor()
         }
     }
 
-    auto leastFrequentColor = min_element(colorFrequency.begin(), colorFrequency.end(), [](const auto& a, const auto& b) {
+    auto leastFrequentColor = min_element(colorFrequency.begin(), colorFrequency.end(), [](const auto& a, const auto& b) 
+        {
         return a.second < b.second;
         });
 
